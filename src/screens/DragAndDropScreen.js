@@ -21,6 +21,7 @@ export default class DragAndDrop extends Component {
     // Add a listener for the delta value change
     this._val = { x:0, y:0 }
     this.state.pan.addListener((value) => this._val = value);
+
     // Initialize PanResponder with move handling
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -50,7 +51,7 @@ export default class DragAndDrop extends Component {
       },
       isDropArea(gesture) {
         return gesture.moveY < 200;
-      },
+      }
       // adjusting delta value
       //this.state.pan.setValue({ x:0, y:0})
     });
