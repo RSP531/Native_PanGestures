@@ -31,9 +31,6 @@ export default class DragAndDrop extends Component {
       onPanResponderMove: Animated.event([
         null, { dx: this.state.pan.x, dy: this.state.pan.y }
       ]),
-      isDropArea(gesture) {
-        return gesture.moveY < 200;
-      },
       onPanResponderRelease: (e, gesture) => {
         if (this.isDropArea(gesture)) {
           Animated.timing(this.state.opacity, {
@@ -50,6 +47,9 @@ export default class DragAndDrop extends Component {
             friction: 5
           }).start();
         }
+      },
+      isDropArea(gesture) {
+        return gesture.moveY < 200;
       },
       // adjusting delta value
       //this.state.pan.setValue({ x:0, y:0})
