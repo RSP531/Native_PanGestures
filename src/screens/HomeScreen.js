@@ -30,6 +30,11 @@ const HomeScreen = ({ navigation }) => {
         title="Go to Drag and Drop"
         onPress={() => navigation.navigate('Bucket')}
       />
+      <Button
+        style={styles.text}
+        title="Go to the photo screen"
+        onPress={() => navigation.navigate('Photos')}
+      />
       <TouchableOpacity onPress={() => navigation.navigate('List')}>
         <Text>Go to List Demo</Text>
       </TouchableOpacity>
