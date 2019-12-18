@@ -1,6 +1,6 @@
 import React  from 'react';
 import { StyleSheet, View } from 'react-native';
-import Camera from './components/Camera.js';
+import Camera from './Camera.js';
 export default class App extends React.Component {
     constructor(props){
         super(props);
