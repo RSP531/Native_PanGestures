@@ -6,7 +6,8 @@ import ImageScreen from './src/screens/ImageScreen';
 import CounterScreen from './src/screens/CounterScreen';
 import DragAndDropScreen from './src/screens/DragAndDropScreen';
 import Bucket from './src/components/Bucket';
-import App from './src/components/CameraParent';
+import CameraParent from './src/components/CameraParent';
+import ColorScreen from './src/components/ColorScreen';
 
 const navigator = createStackNavigator(
   {
@@ -16,7 +17,8 @@ const navigator = createStackNavigator(
     Images: ImageScreen,
     Counter: CounterScreen,
     Bucket: Bucket,
-    Photos: App,
+    Photos: CameraParent,
+    Colors: ColorScreen
   },
   {
     initialRouteName: 'Home',

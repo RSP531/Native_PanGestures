@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { StyleSheet, Dimensions, Alert, ActivityIndicator } from 'react-native';
 import { RNCamera } from 'react-native-camera';
-import CaptureButton from './CaptureButton';
+import CaptureButton from './CaptureButton.js';
 
 export default class Camera extends React.Component {
   constructor(props){
@@ -34,13 +34,20 @@ export default class Camera extends React.Component {
     //Initialise Clarifai api
     const Clarifai = require('clarifai');
     const app = new Clarifai.App({
-      apiKey: '20562d5f53d046f08b2018549d6061b5'
+      apiKey: 'c5f2ca65c41b4036bf09a94948da04dd'
     });
     //Identify the image
-    app.models.predict(Clarifai.GENERAL_MODEL, {base64:imageData})
-    .then((response) => this.displayAnswer(response.outputs[0].data.concepts[0].name)
-    .catch((err) => alert(err))
-    );
+    // app.models.predict(Clarifai.GENERAL_MODEL, {base64:imageData})
+    //   .then((response) => this.displayAnswer(response.outputs[0].data.concepts[0].name)
+    //   .catch((err) => alert(err))
+    // );
+    app.models.predict(Clarifai.GENERAL_MODEL, 'https://samples.clarifai.com/metro-north.jpg')
+        .then(response => {
+          console.log(response);
+        })
+        .catch(err => {
+          console.log(err);
+        });
   }
 
   displayAnswer(identifiedImage){
@@ -62,9 +69,11 @@ export default class Camera extends React.Component {
   render() {
     return (
       <RNCamera 
-        ref={ref => {this.camera = ref;}} 
+        ref={ref => {
+          this.camera = ref;
+        }} 
         style={styles.preview}>
-        <ActivityIndicator 
+        {/* <ActivityIndicator 
           size="large"
           style={styles.loadingIndicator}
           color="#fff"
@@ -73,7 +82,7 @@ export default class Camera extends React.Component {
         <CaptureButton 
           buttonDisabled={this.state.loading}
           onClick={this.takePicture.bind(this)}
-        />
+        /> */}
       </RNCamera>
     );
   }

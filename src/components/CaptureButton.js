@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Button, TouchableHighlight } from 'react-native';
 
-export default class CaptureButton extends Component {
+export default class CaptureButton extends React.Component {
   render() {
     return (
       <TouchableHighlight 
