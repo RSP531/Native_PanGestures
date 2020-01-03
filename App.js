@@ -9,6 +9,7 @@ import Bucket from './src/components/Bucket';
 import CameraParent from './src/components/CameraParent';
 import ColorScreen from './src/components/ColorScreen';
 import SquareScreen from './src/screens/SquareScreen';
+import TextScreen from './src/screens/TextScreen';
 
 const navigator = createStackNavigator(
   {
@@ -20,7 +21,8 @@ const navigator = createStackNavigator(
     Bucket: Bucket,
     Photos: CameraParent,
     // Colors: ColorScreen,
-    Squares: SquareScreen
+    Squares: SquareScreen,
+    TextInput: TextScreen
   },
   {
     initialRouteName: 'Home',
