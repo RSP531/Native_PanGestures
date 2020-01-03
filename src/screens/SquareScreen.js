@@ -13,12 +13,18 @@ const reducer = (state, action) => {
     case 'red':
       // never going to do
       // state.red = state.red - 15;
-      return {...state, red: state.red + action.amount};
+      return state.red + action.amount > 255 || state.red + action.amount < 0
+        ? state
+        : {...state, red: state.red + action.amount};
       //makes a brand new object & copy paste into new one
     case 'green':
-      return {...state, green: state.green + action.amount};
+      return state.green + action.amount > 255 || state.green + action.amount < 0
+        ? state
+        : {...state, green: state.green + action.amount};
     case 'blue':
-      return {...state, blue: state.blue + action.amount};
+      return state.blue + action.amount > 255 || state.blue + action.amount < 0
+        ? state
+        : {...state, blue: state.blue + action.amount};
     default: 
       return state;
   }

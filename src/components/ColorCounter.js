@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
   list: {
     width: 100,
     alignSelf: 'center',
-    margin: 5
+    margin: 5,
   },
   button: {
-    padding: 5
+    padding: 5,
   }
 });
 
