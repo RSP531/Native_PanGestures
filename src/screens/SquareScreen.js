@@ -63,21 +63,21 @@ return (
     <ColorCounter
       // onIncrease={() => setColor('red', COLOR_INCREMENT)}
       // onDecrease={() => setColor('red', -1 * COLOR_INCREMENT)}
-      onIncrease={() => dispatch({ type: 'change_red', payload : COLOR_INCREMENT })}
+      onIncrease={() => dispatch({ type: 'change_red', payload: COLOR_INCREMENT })}
       onDecrease={() => dispatch({ type: 'change_red', payload: -1 * COLOR_INCREMENT })}
       color="red"
     />
     <ColorCounter
       // onIncrease={() => setColor('green', COLOR_INCREMENT)}
       // onDecrease={() => setColor('green', -1 * COLOR_INCREMENT)}
-      onIncrease={() => dispatch({ type: 'change_blue', payload : COLOR_INCREMENT })}
+      onIncrease={() => dispatch({ type: 'change_blue', payload: COLOR_INCREMENT })}
       onDecrease={() => dispatch({ type: 'change_blue', payload: -1 * COLOR_INCREMENT })}
       color="blue"
     />
     <ColorCounter
       // onIncrease={() => setColor('blue', COLOR_INCREMENT)}
       // onDecrease={() => setColor('blue', -1 * COLOR_INCREMENT)}
-      onIncrease={() => dispatch({ type: 'change_green', payload : COLOR_INCREMENT })}
+      onIncrease={() => dispatch({ type: 'change_green', payload1: COLOR_INCREMENT })}
       onDecrease={() => dispatch({ type: 'change_green', payload: -1 * COLOR_INCREMENT })}
       color="green"
     />
