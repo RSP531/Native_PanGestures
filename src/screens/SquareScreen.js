@@ -20,12 +20,14 @@ const reducer = (state, action) => {
     case 'blue':
       return {...state, blue: state.blue + action.amount};
     default: 
-      return state
+      return state;
   }
 }; //best practice is to define outside of component
 
 const SquareScreen = () => {
   const [state, dispatch] = useReducer(reducer, {red: 0, green: 0, blue: 0} )
+  const {red, green, blue } = state; 
+  //dispatch = "invoke my reducer"
   // console.log(state) //{red: 0, green: 0, blue: 0} 
 
   // const [red, setRed] = useState(0);  //delete
@@ -53,22 +55,22 @@ return (
     <ColorCounter
       // onIncrease={() => setColor('red', COLOR_INCREMENT)}
       // onDecrease={() => setColor('red', -1 * COLOR_INCREMENT)}
-      onIncrease={() =>}
-      onDecrease={() =>}
+      onIncrease={() => dispatch({ colorToChange: 'red', amount : COLOR_INCREMENT })}
+      onDecrease={() => dispatch({ colorToChange: 'red', amount: -1 * COLOR_INCREMENT })}
       color="red"
     />
     <ColorCounter
       // onIncrease={() => setColor('green', COLOR_INCREMENT)}
       // onDecrease={() => setColor('green', -1 * COLOR_INCREMENT)}
-      onIncrease={() =>}
-      onDecrease={() =>}
+      onIncrease={() => dispatch({ colorToChange: 'blue', amount : COLOR_INCREMENT })}
+      onDecrease={() => dispatch({ colorToChange: 'blue', amount: -1 * COLOR_INCREMENT })}
       color="green"
     />
     <ColorCounter
       // onIncrease={() => setColor('blue', COLOR_INCREMENT)}
       // onDecrease={() => setColor('blue', -1 * COLOR_INCREMENT)}
-      onIncrease={() =>}
-      onDecrease={() =>}
+      onIncrease={() => dispatch({ colorToChange: 'green', amount : COLOR_INCREMENT })}
+      onDecrease={() => dispatch({ colorToChange: 'green', amount: -1 * COLOR_INCREMENT })}
       color="blue"
     />
     <View
@@ -76,7 +78,7 @@ return (
         height: 150,
         width: 150,
         alignSelf: 'center',
-        backgroundColor: `rgb(${red}, ${green}, ${blue})
+        backgroundColor: `rgb(${red}, ${green}, ${blue})`
       }}
     />
   </View>
