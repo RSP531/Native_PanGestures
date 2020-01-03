@@ -64,14 +64,14 @@ return (
       // onDecrease={() => setColor('green', -1 * COLOR_INCREMENT)}
       onIncrease={() => dispatch({ colorToChange: 'blue', amount : COLOR_INCREMENT })}
       onDecrease={() => dispatch({ colorToChange: 'blue', amount: -1 * COLOR_INCREMENT })}
-      color="green"
+      color="blue"
     />
     <ColorCounter
       // onIncrease={() => setColor('blue', COLOR_INCREMENT)}
       // onDecrease={() => setColor('blue', -1 * COLOR_INCREMENT)}
       onIncrease={() => dispatch({ colorToChange: 'green', amount : COLOR_INCREMENT })}
       onDecrease={() => dispatch({ colorToChange: 'green', amount: -1 * COLOR_INCREMENT })}
-      color="blue"
+      color="green"
     />
     <View
       style={{
