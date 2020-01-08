@@ -50,10 +50,15 @@ const HomeScreen = ({ navigation }) => {
         title="Go to the Text Input screen"
         onPress={() => navigation.navigate('TextInput')}
       />
-            <Button
+      <Button
         style={styles.text}
         title="Go to the Box screen page"
         onPress={() => navigation.navigate('Boxes')}
+      />
+      <Button
+        style={styles.text}
+        title="Go to the Text screen page"
+        onPress={() => navigation.navigate('Texting')}
       />
       <TouchableOpacity onPress={() => navigation.navigate('List')}>
         <Text>Go to List Demo</Text>
