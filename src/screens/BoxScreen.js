@@ -236,6 +236,7 @@ const mapStyle = [
   }
 ]
 
+
 const BoxScreen = () => {
 
   return (
@@ -295,10 +296,14 @@ const BoxScreen = () => {
       </Button>
 
       </View> */}
-      <Button style={styles.pressMe} icon="routes" mode="contained" onPress={() => console.log('Taylor the Terrible')}>
-        Taylor De-Press me
-      </Button>
+
     </View>
+    <Button style={styles.pressMe1} icon="routes" mode="contained" onPress={() => console.log('Taylor the Terrible')}>
+        Taylor De-Press me
+    </Button>
+    <Button style={styles.pressMe2} icon="routes" mode="contained" onPress={() => console.log('Tye the Tiger')}>
+        Tye De-Press me 2
+    </Button>
     </>
   )
 }
@@ -306,8 +311,8 @@ const BoxScreen = () => {
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 600,
-    width: 400,
+    // height: 600,
+    // width: 400,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
@@ -351,10 +356,20 @@ const styles = StyleSheet.create({
   bottom: {
     backgroundColor: 'black'
   },
-  pressMe: {
+  pressMe1: {
     margin: 10,
     backgroundColor: 'black',
-    marginTop: 'auto'
+    position: 'absolute',
+    bottom: 20,
+    alignSelf: 'center',
+  },
+  pressMe2: {
+    margin: 10,
+    backgroundColor: 'black',
+    position: 'absolute',
+    bottom: 70,
+    alignSelf: 'center',
+    fontSize: 24
   },
   pickUpCard: {
     margin: 20,
