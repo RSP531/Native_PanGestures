@@ -1,0 +1,62 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add react-native-vector-icons
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/Users/rob/Library/Android/sdk/emulator:/Users/rob/Library/Android/sdk/tools:/Users/rob/Library/Android/sdk/tools/bin:/Users/rob/Library/Android/sdk/platform-tools:/usr/local/mysql/bin:/Users/rob/Library/Android/sdk/emulator:/Users/rob/Library/Android/sdk/tools:/Users/rob/Library/Android/sdk/tools/bin:/Users/rob/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/Users/rob/Documents/Udemy/React_Native/rn-starter/node_modules/content-disposition/node_modules'
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "clarifai": "^2.9.1",
+      "expo": "^33.0.0",
+      "express": "^4.17.1",
+      "nodemon": "^2.0.2",
+      "react": "16.8.3",
+      "react-dom": "^16.8.6",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+      "react-native-camera": "^3.15.0",
+      "react-native-gesture-handler": "~1.2.1",
+      "react-native-reanimated": "1.0.1",
+      "react-native-web": "^0.11.4",
+      "react-navigation": "^3.11.0",
+      "react-navigation-stack": "^1.10.3"
+    },
+    "devDependencies": {
+      "babel-preset-expo": "^5.1.1",
+      "twilio": "^3.39.1",
+      "body-parser": "^1.19.0",
+      "express": "^4.17.1",
+      "express-pino-logger": "^4.0.0",
+      "node-env-run": "^3.0.2",
+      "nodemon": "^1.19.3",
+      "npm-run-all": "^4.1.5",
+      "pino-colada": "^1.4.5"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

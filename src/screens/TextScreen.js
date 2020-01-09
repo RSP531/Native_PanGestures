@@ -5,18 +5,18 @@ const TextScreen = () => {
   const [name, setName] = useState('');
 
   return (
-  <View>
-    <Text>Text Screen</Text>
-    <TextInput
-      style={styles.inputBar}
-      autoCapitalize="none"
-      autoCorrect={false}
-      value={name}
-      onChangeText={(newValue) => setName(newValue)}
-    />
-    <Text> My name is {name}</Text>
-    {name.length > 5 ? null : <Text>Name must be greater than 5 char</Text> }
-  </View>
+    <View>
+      <Text>Text Screen</Text>
+      <TextInput
+        style={styles.inputBar}
+        autoCapitalize="none"
+        autoCorrect={false}
+        value={name}
+        onChangeText={(newValue) => setName(newValue)}
+      />
+      <Text> My name is {name}</Text>
+      {name.length > 5 ? null : <Text>Name must be greater than 5 char</Text> }
+    </View>
   );
 };
 
