@@ -236,6 +236,11 @@ const mapStyle = [
   }
 ]
 
+// const nightTime={(() => {
+//   let today = new Date();
+//   let hour = today.getHours();
+//   return hour > 17 || hour < 6 ? custMapStyle : null;
+// })()}
 
 const BoxScreen = () => {
 
@@ -372,8 +377,8 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   pickUpCard: {
-    margin: 20,
-    height: 300,
+    margin: '20%',
+    height: 200,
     width: 280,
     borderColor: 'black',
     alignItems: 'center',
