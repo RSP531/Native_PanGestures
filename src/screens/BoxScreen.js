@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Platform } from 'react-native';
+import { Text, View, StyleSheet, Platform, Image } from 'react-native';
 import { Provider as PaperProvider , Button, Appbar, Card } from 'react-native-paper';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 const mapStyle = [
@@ -272,21 +272,32 @@ const BoxScreen = () => {
               borderBottomWidth: 2,
             }}
           />
-          <Button style={styles.pressMe} icon="keyboard-backspace" mode="contained" onPress={() => console.log('Johnny Tsunami')}>
+          {/* <Image style={{height:20}} source='https://raw.githubusercontent.com/RitzCarltonCarService/RitzCarltonCarService/master/assets/RitzLogo.png'>
+            hi
+          </Image> */}
+          <Text style={styles.fadedText}>
+            Request
+          </Text>
+          <Image 
+            source={require('../../assets/RitzLogo.png')}
+            style={{height: 80,resizeMode: 'center', alignSelf:'flex-end'}}
+          />
+          {/* <Button style={styles.pressMe} icon="keyboard-backspace" mode="contained" onPress={() => console.log('Johnny Tsunami')}>
             Jonathan Press me
           </Button>
           <Button style={styles.pressMe} icon="bat" mode="contained" onPress={() => console.log('Bats fly high')}>
-          </Button>
+          </Button> */}
         </Card>
       </View>
       {/* <View style={styles.bottomButtons}>
       <Button style={styles.pressMe} icon="routes" mode="contained" onPress={() => console.log('Taylor the Great')}>
         Taylor Press me
       </Button>
+
+      </View> */}
       <Button style={styles.pressMe} icon="routes" mode="contained" onPress={() => console.log('Taylor the Terrible')}>
         Taylor De-Press me
       </Button>
-      </View> */}
     </View>
     </>
   )
@@ -304,8 +315,6 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
   },
   viewStyle: {
-    // borderWidth: 3,
-    // borderColor: 'black',
     alignItems: 'center',
     backgroundColor: 'rgb(102, 102, 255)',
     backgroundColor: 'transparent'
@@ -317,7 +326,10 @@ const styles = StyleSheet.create({
     }),
     fontSize: 24,
     textAlign: 'center',
-    marginVertical: 10
+    marginVertical: 10,
+  },
+  fadedText: {
+
   },
   textStyle: {
     borderWidth: 3,
@@ -342,11 +354,12 @@ const styles = StyleSheet.create({
   pressMe: {
     margin: 10,
     backgroundColor: 'black',
+    marginTop: 'auto'
   },
   pickUpCard: {
     margin: 20,
     height: 300,
-    width: 300,
+    width: 280,
     borderColor: 'black',
     alignItems: 'center',
     alignContent: 'center'
