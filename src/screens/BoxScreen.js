@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Platform } from 'react-native';
 import { Provider as PaperProvider , Button, Appbar, Card } from 'react-native-paper';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 
@@ -20,22 +20,26 @@ const BoxScreen = () => {
       >
       </MapView>
     </View>
-    <View style={styles.viewStyle}> 
       <Appbar style={styles.bottom}>
-        <Appbar.Action icon="menu" onPress={() => console.log('Pressed menu')} />
-        {/* <Appbar.Action style={styles.bottom} icon="archive" onPress={() => console.log('Pressed archive')} />
-        <Appbar.Action icon='mail' onPress={() => console.log('Pressed mail')} />
-        <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
-        <Appbar.Action icon="delete" onPress={() => console.log('Pressed delete')} /> */}
+        <Appbar.Action icon="menu" onPress={() => console.log('Pressed menu Bee-otch')} />
       </Appbar>
+    <View style={styles.viewStyle}> 
       <View style={styles.cardAlign}>
         <Card style={styles.pickUpCard}>
-          <Button style={styles.pressMe} icon="menu" mode="contained" onPress={() => console.log('Pressed')}>
-            Press me
+          <Text style={styles.headerText}>
+            Your New Pick-Up
+          </Text>
+          <Text style={styles.headerText}>
+            Request
+          </Text>
+          <Button style={styles.pressMe} icon="keyboard-backspace" mode="contained" onPress={() => console.log('Johnny Tsunami')}>
+            Jonathan Press me
+          </Button>
+          <Button style={styles.pressMe} icon="bat" mode="contained" onPress={() => console.log('Bats fly high')}>
           </Button>
         </Card>
       </View>
-      <Button style={styles.pressMe} icon="menu" mode="contained" onPress={() => console.log('Taylor the Terrible')}>
+      <Button style={styles.pressMe} icon="routes" mode="contained" onPress={() => console.log('Taylor the Terrible')}>
         Taylor Press me
       </Button>
     </View>
@@ -57,8 +61,18 @@ const styles = StyleSheet.create({
   viewStyle: {
     // borderWidth: 3,
     // borderColor: 'black',
-    alignItems: 'flex-start',
-    backgroundColor: 'rgb(102, 102, 255)'
+    alignItems: 'center',
+    backgroundColor: 'rgb(102, 102, 255)',
+    backgroundColor: 'transparent'
+  },
+  headerText: {
+    ...Platform.select({
+      ios: { fontFamily: 'Arial', }, 
+      android: { fontFamily: 'Roboto' }
+    }),
+    fontSize: 24,
+    textAlign: 'center',
+    marginTop: 10
   },
   textStyle: {
     borderWidth: 3,
@@ -82,13 +96,15 @@ const styles = StyleSheet.create({
   },
   pressMe: {
     margin: 10,
-    backgroundColor: 'black'
+    backgroundColor: 'black',
   },
   pickUpCard: {
-    margin: 10,
-    height: 100,
+    margin: 20,
+    height: 200,
+    width: 300,
     borderColor: 'black',
     alignItems: 'center',
+    alignContent: 'center'
   },
   cardAlign: {
     alignItems: 'center',
