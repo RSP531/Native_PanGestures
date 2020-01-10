@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, Platform, Image } from 'react-native';
 import { Provider as PaperProvider , Button, Appbar, Card } from 'react-native-paper';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import ScrollPicker from 'react-native-wheel-scroll-picker';
 const mapStyle = [
   {
     "elementType": "geometry",
@@ -266,8 +267,31 @@ const BoxScreen = () => {
     <View style={styles.viewStyle}> 
       <View style={styles.cardAlign}>
         <Card style={styles.pickUpCard}>
+          <ScrollPicker
+            dataSource={[
+              'a',
+              'b',
+              'c',
+              'd',
+              ]}
+            selectedIndex={1}
+            renderItem={(data,index,isSelected) => {
+              //
+            }}
+            onValueChange={(data,selectedIndex) => {
+              //
+            }}
+            wrapperHeight={300}
+            wrapperWidth={300}
+            wrapperBackground={'#FFFFFF'}
+            itemHeight={300}
+            highlightColor={'#rgb(66, 99, 245)'}
+            highlightBorderWidth={2}
+            activeItemColor={'#rgb(235, 52, 216)'}
+            itemColor={'#rgb(105, 245, 66)'}
+          />
           <Text style={styles.headerText}>
-            Your New Pick-Up
+            Your New Pick-Up Chuck
           </Text>
           <Text style={styles.headerText}>
             Request
@@ -278,12 +302,9 @@ const BoxScreen = () => {
               borderBottomWidth: 2,
             }}
           />
-          {/* <Image style={{height:20}} source='https://raw.githubusercontent.com/RitzCarltonCarService/RitzCarltonCarService/master/assets/RitzLogo.png'>
-            hi
-          </Image> */}
-          <Text style={styles.fadedText}>
+          {/* <Text style={styles.fadedText}>
             Request
-          </Text>
+          </Text> */}
           <Image 
             source={require('../../assets/RitzLogo.png')}
             style={{height: 80,resizeMode: 'center', alignSelf:'flex-end'}}
@@ -382,13 +403,16 @@ const styles = StyleSheet.create({
     width: 280,
     borderColor: 'black',
     alignItems: 'center',
-    alignContent: 'center'
+    alignContent: 'center',
+    backgroundColor: 'rgb(102, 102, 255)',
   },
   cardAlign: {
     alignItems: 'center',
   },
   bottomButtons: {
-    marginTop: 100
+    marginTop: 100,
+    height: 30,
+    width: '50%'
   }
 })
 
