@@ -3,6 +3,7 @@ import {View, Text, StyleSheet } from 'react-native';
 //import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import ScrollPicker from 'react-native-wheel-scroll-picker';
+//import console = require('console');
 
 const aubergineMapStyle = [
   {
@@ -409,6 +410,9 @@ const TextingSMSScreen = () => {
   } else  (
     mapColorizer = silverMapStyle
   )
+
+  let dataArray = ['',0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,''];
+
     return (
       <>
         <View style={styles.container}>
@@ -424,40 +428,26 @@ const TextingSMSScreen = () => {
           customMapStyle={mapColorizer}
           >
           </MapView>
-          <View style={styles.pickerContainer}>
-          <ScrollPicker
-            dataSource={[
-              1,
-              'b',
-              'c',
-              'd',
-              '5',
-              6,
-              7,
-              8,
-              9,
-              10,
-              11,
-              12,13,14,15,16,17,18,19,20
-              ]}
-            selectedIndex={1}
-            renderItem={(data,index,isSelected) => {
-              //
-            }}
-            onValueChange={(data,selectedIndex) => {
-              //
-            }}
-            wrapperHeight={150}
-            wrapperWidth={60}
-            wrapperBackground={'#rgb(235, 218, 240)'}
-            itemHeight={30}
-            highlightColor={'#rgb(66, 99, 245)'}
-            highlightBorderWidth={2}
-            activeItemColor={'#rgb(235, 52, 216)'}
-            itemColor={'#rgb(105, 245, 66)'}
-            style={styles.scrollStyles}
-          />
-          </View>
+            <View style={styles.pickerContainer}>
+              <ScrollPicker
+                dataSource={dataArray}
+                selectedIndex={1}
+                renderItem={(data,index,isSelected) => {
+                }}
+                onValueChange={(data,selectedIndex) => {
+                  console.log(data)
+                }}
+                wrapperHeight={120}
+                wrapperWidth={50}
+                wrapperBackground={'white'}
+                itemHeight={40}
+                highlightColor={'rgba(0,0,0,0)'}
+                highlightBorderWidth={2}
+                activeItemColor={'#rgb(0,0,0)'}
+                itemColor={'#rgb(255,17,0)'}
+                style={styles.scrollStyles}
+              />
+            </View>
         </View>
       </>
     )
@@ -472,10 +462,11 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
   },
   pickerContainer: {
-    height: 100,
+    height: 120,
+    borderColor: 'black',
   },
   scrollStyles: {
-
-  }
+    borderColor: 'black',
+  },
 })
 export default TextingSMSScreen;
