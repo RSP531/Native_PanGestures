@@ -428,7 +428,7 @@ const TextingSMSScreen = () => {
           customMapStyle={mapColorizer}
           >
           </MapView>
-            <View style={styles.pickerContainer}>
+            {/* <View style={styles.pickerContainer}>
               <ScrollPicker
                 dataSource={dataArray}
                 selectedIndex={1}
@@ -447,7 +447,7 @@ const TextingSMSScreen = () => {
                 itemColor={'#rgb(255,17,0)'}
                 style={styles.scrollStyles}
               />
-            </View>
+            </View> */}
         </View>
       </>
     )
